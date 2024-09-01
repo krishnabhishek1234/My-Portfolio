@@ -21,7 +21,7 @@ html{
 }
 
 body{
-    background: var(--bg-color);
+    /* background: var(--bg-color); */
     color:var(--text-color) ;
 }
 .header{
@@ -38,13 +38,25 @@ body{
 }
 
 .logo{
+    position: relative;
     font-size:2.5rem ;
     color: var(--text-color);
     font-weight: 600;
 }
+.logo::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
 
 .navbar a{
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     color: var(--text-color);
     font-weight: 500;
     margin-left: 3.5rem;
@@ -69,6 +81,9 @@ section{
 }
 .home{
     display: flex;
+    background: url('portfolio1.png') no-repeat;
+    background-size: cover;
+    background-position: center;
     align-items: center;
     padding: 0 9%;
 }
@@ -78,9 +93,22 @@ section{
 }
 
 .home-content h1{
+    position: relative;
     font-size: 5.6rem;
     font-weight: 700;
     line-height: 1.3;
+}
+
+.home-content h1::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
 }
 
 .home-content .text-animate{
@@ -89,15 +117,40 @@ section{
 }
 
 .home-content .text-animate h3{
+    position: relative;
     font-size: 3.2rem;
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke:.7px var(--main-color) ;
 }
+.home-content h3::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
 
 .home-content p{
+    position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
+}
+
+.home-content p::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.8s;
 }
 
 .btn-box{
@@ -125,6 +178,18 @@ section{
     z-index: 1;
     overflow: hidden;
     transform: .5s;
+}
+.home-content .btn-box::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2s;
+    z-index: 2;
 }
 .btn-box .btn:hover{
     color: var(--main-color);
@@ -154,4 +219,98 @@ section{
 
 .btn-box .btn:hover::before{
     width: 100%;
+}
+.home-sci{
+    position:absolute;
+    bottom:40px;
+    width:170px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sci::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height:40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color:#00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.home-sci a :hover{
+    color: #081b29;
+}
+.home-sci a::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:100%;
+    background-color:#00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+.home-sci a:hover::before{
+    width: 100%;
+} 
+
+.home-imgHOVER {
+position: absolute;
+top: 0;
+right: 30px;
+width: 500px;
+height: 100%;
+background: transparent;
+transition: 3s;
+animation: manipActiveHover .1s forwards;
+animation-delay: 4s;
+pointer-events: none;
+}
+
+.home-imgHOVER::after{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:122%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index:100 ;
+}
+.home-imgHOVER:hover {
+    background:#081b29 ;
+    opacity: .8;
+}
+
+@keyframes showRight{
+    100%{
+        width:0;
+    }
+}
+
+@keyframes manipActiveHover{
+    100%{
+        pointer-events: auto;
+    }
 }
